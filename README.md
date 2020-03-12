@@ -36,7 +36,7 @@ ui
         Button
             src
                 index.vue
-            index.js
+            main.js
     public
         favicon.ico
         index.html
@@ -51,7 +51,7 @@ src重命名为examples, 并添加packages目录,用来存放我们的自定义�
 module.exports = {
   pages: {
     index: {
-      entry: 'examples/main.js',
+      entry: main.js',
       template: 'public/index.html',
       filename: 'index.html'
     }
@@ -113,7 +113,7 @@ export default XButton
 Button
     src
         index.vue
-    index.js
+    main.js
 ```
 packages的入口文件中导入组件并安装导出：
 ```javascript
@@ -196,7 +196,7 @@ export default {
 "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name xui --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name xui --dest lib packages/main.js"
   }
 ```
 lib脚本就是用来打包packages的组件代码到lib目录下,文件名为以--name指定的名称前缀开头,我们执行脚本会输出类似如下代码:
