@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Mario logo" src="./assets/mario-logo-body.svg">
+<!--    <img alt="Mario logo" src="./assets/mario-logo-body.svg">-->
+    <MButton @click="test" type="primary" plain>MButton</MButton>
+    <MButton @click="test" type="success" plain>MButton</MButton>
+    <MButton @click="test" type="info" plain>MButton</MButton>
+    <MButton @click="test" type="warning" plain>MButton</MButton>
+    <MButton @click="test" type="danger" plain>MButton</MButton>
+    <MButton @click="test" type="danger" disable>MButton</MButton>
+    <MButton @click="test" type="danger" size="small" disable>MButton</MButton>
     <HelloWorld msg="Welcome to Mario-UI-Mobile"/>
-    <MButton>This is MButton</MButton>
   </div>
 </template>
 
@@ -13,11 +19,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    test(e){
+      console.log(e);
+    }
   }
 }
 </script>
 
-<style>
+<style lang="stylus">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -51,7 +51,7 @@ src重命名为examples, 并添加packages目录,用来存放我们的自定义�
 module.exports = {
   pages: {
     index: {
-      entry: main.js',
+      entry: 'examples/main.js',
       template: 'public/index.html',
       filename: 'index.html'
     }
@@ -257,3 +257,17 @@ npm version minor
 npm version major
 ```
 还有更加深入的知识比如版本的tag化,本案例参考ele
+
+---
+* Done is better than perfect——Facebook Office
+* 完成比完美更好
+* Go big or go home——Facebook Office
+* 要么牛逼，要么滚蛋
+* Talk is cheap. Show me the code.——Linus Torvalds
+* 能说算不上什么，有本事就把你的代码给我看看
+* You build it, You run it. ——Werner Vogels 
+
+* Stay hungry Stay foolish. ——Jobs
+* 求知若饥，虚心若愚
+* Eat our own dog food. ——Term
+* dog food: 内部测试版本

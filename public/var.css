@@ -1,0 +1,39 @@
+
+:root {
+    --my-main-blue: #494ed0;
+    --my-main-red: #d23d29;
+    --my-main-brown: #81432b;
+    --my-main-skin: #dfb589;
+    --my-main-black: #000000;
+    --my-main-yellow: #fcf336;
+
+    --default-font-color: #333;
+    --default-border-color: #ebebeb;
+    --default-bg-color: #ffffff;
+    --default-plain-bg-color: #ffffff;
+
+    --primary-font-color: #409eff;
+    --primary-border-color: #b3d8ff;
+    --primary-bg-color: #409eff;
+    --primary-plain-bg-color: #ecf5ff;
+
+    --success-font-color: #67c23a;
+    --success-border-color: #c2e7b0;
+    --success-bg-color: #67c23a;
+    --success-plain-bg-color: #f0f9eb;
+
+    --info-font-color: #737477;
+    --info-border-color: #d3d4d6;
+    --info-bg-color: #909399;
+    --info-plain-bg-color: #f4f4f5;
+
+    --warning-font-color: #e6a23c;
+    --warning-border-color: #f5dab1;
+    --warning-bg-color: #e6a23c;
+    --warning-plain-bg-color: #fdf6ec;
+
+    --danger-font-color: #f66c96;
+    --danger-border-color: #fbc4c4;
+    --danger-bg-color: #f56c6c;
+    --danger-plain-bg-color: #fef0f0;
+}

@@ -1,23 +1,165 @@
 <template>
-    <div class="m-button">
+    <div class="mario-button"
+         @click="handleClick"
+         :disable="disable"
+         :class="['mario-button-' + type, 'mario-button-' + size, {
+            'is-disabled': disable
+         }]"
+         :plain="plain"
+         :type="nativeType">
         <slot></slot>
     </div>
 </template>
 
 <script>
+	if (process.env.NODE_ENV === 'component') {
+		require('mint-ui/packages/font/style.css');
+	}
 	export default {
-		name: 'm-button',
+		name: 'MButton',
 		props: {
-			type: String
-		}
+			type: {
+                type: String,
+                default: 'default',
+                validator(value) {
+                    return [
+                        'default',
+                        'primary',
+                        'success',
+                        'info',
+                        'warning',
+                        'danger'
+                    ].indexOf(value) > -1;
+                }
+            },
+            disable: {
+				type: Boolean,
+                default: false
+            },
+            nativeType: {
+                type: String,
+                default: 'button'
+            },
+            plain: {
+                type: Boolean,
+                default: false
+            },
+            size: {
+                type: String,
+                default: 'normal',
+                validator(value) {
+                    return [
+                        'small',
+                        'normal',
+                        'large'
+                    ].indexOf(value) > -1;
+                }
+            }
+        },
+        methods: {
+            handleClick(evt) {
+                this.disable? void 0: this.$emit('click', evt);
+            }
+        }
 	}
 </script>
 
-<style scoped>
-    .m-button {
+<style lang="stylus" scoped>
+    .mario-button
+        user-select: none
+        appearance: none;
+        border-radius: 4px;
+        border: 0;
+        box-sizing: border-box;
+        color: inherit;
         display: inline-block;
-        padding: 3px 6px;
-        background: #000;
-        color: #fff;
-    }
+        font-size: 1rem;
+        height: 41px;
+        outline: 0;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        line-height: 1;
+        padding: 12px 20px;
+        cursor pointer
+        &::after
+            content: ''
+            position absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background-color: #000
+            opacity 0
+            transition opacity ease-out .2s
+        &[disable]
+            opacity .6
+            /*cursor:no-drop*/
+            cursor:not-allowed
+            &::after
+                display none
+        &:active
+            &::after
+                opacity .2
+        &.mario-button-small
+            padding: 8px 12px
+            height: 33px
+            font-size: 14px
+        &.mario-button-normal
+            padding: 12px 12px
+        &.mario-button-default
+            color #fff
+            border-width: 1px
+            border-style: solid
+            border-color:var(--default-border-color)
+            background-color: var(--default-bg-color)
+            [plain]
+                color var(--default-font-color)
+                background-color: var(--default-plain-bg-color)
+        &.mario-button-primary
+            color: #fff
+            border-width: 1px
+            border-style: solid
+            border-color:var(--primary-border-color)
+            background-color: var(--primary-bg-color)
+            [plain]
+                color var(--primary-font-color)
+                background-color: var(--primary-plain-bg-color)
+        &.mario-button-success
+            color #fff
+            border-width: 1px
+            border-style: solid
+            border-color:var(--success-border-color)
+            background-color: var(--success-bg-color)
+            [plain]
+                color var(--success-font-color)
+                background-color: var(--success-plain-bg-color)
+        &.mario-button-info
+            color #fff
+            border-width: 1px
+            border-style: solid
+            border-color:var(--info-border-color)
+            background-color: var(--info-bg-color)
+            [plain]
+                color var(--info-font-color)
+                background-color: var(--info-plain-bg-color)
+        &.mario-button-warning
+            color #fff
+            border-width: 1px
+            border-style: solid
+            border-color:var(--warning-border-color)
+            background-color: var(--warning-bg-color)
+            [plain]
+                color var(--warning-font-color)
+                background-color: var(--warning-plain-bg-color)
+        &.mario-button-danger
+            border-width: 1px
+            border-style: solid
+            color #fff
+            border-color:var(--dangerg-border-color)
+            background-color: var(--danger-bg-color)
+            [plain]
+                color var(--danger-font-color)
+                background-color: var(--danger-plain-bg-color)
+
 </style>
