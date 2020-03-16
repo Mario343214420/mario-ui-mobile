@@ -74,13 +74,11 @@
         color: inherit;
         display: inline-block;
         font-size: 1rem;
-        height: 41px;
         outline: 0;
         overflow: hidden;
         position: relative;
         text-align: center;
         line-height: 1;
-        padding: 12px 20px;
         cursor pointer
         &::after
             content: ''
@@ -102,11 +100,12 @@
             &::after
                 opacity .2
         &.mario-button-small
-            padding: 8px 12px
-            height: 33px
-            font-size: 14px
+            padding: .25rem .6rem
+            font-size: .5rem
         &.mario-button-normal
-            padding: 12px 12px
+            padding: .4rem .8rem
+        &.mario-button-large
+            padding: .6rem 1rem
         &.mario-button-default
             color #fff
             border-width: 1px
