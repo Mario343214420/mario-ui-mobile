@@ -1,7 +1,10 @@
 <template>
     <transition>
         <div class="mario-toast" v-show="visible">
-            <div>mario-toast</div>
+            <i class="mint-toast-icon" :class="iconClass" v-if="iconClass !== ''"></i>
+            <span class="mint-toast-text" :class="iconClass !== '' ? 'pdt10px' : ''">
+                {{ msg }}
+            </span>
             <slot></slot>
         </div>
     </transition>
@@ -19,6 +22,10 @@
                 default: 'middle'
             },
             className: {
+                type: String,
+                default: ''
+            },
+			msg: {
                 type: String,
                 default: ''
             }

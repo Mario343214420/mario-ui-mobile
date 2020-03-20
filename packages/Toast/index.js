@@ -1,8 +1,8 @@
 // 导入组件，组件必须声明 name
-import MButton from './src'
+import MToast from './src'
 // 为组件提供 install 安装方法，供按需引入
-MButton.install = function (Vue) {
-	Vue.component(MButton.name, MButton)
+MToast.install = function (Vue) {
+	Vue.component(MToast.name, MToast)
 }
 // 导出组件
-export default MButton
+export default MToast

@@ -94,6 +94,12 @@
             opacity .6
             /*cursor:no-drop*/
             cursor:not-allowed
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Chrome/Safari/Opera */
+            -khtml-user-select: none; /* Konqueror */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
             &::after
                 display none
         &:active
