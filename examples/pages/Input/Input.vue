@@ -1,12 +1,12 @@
 <template>
-    <div class="mario-vessel">
-        mario-vessel
+    <div>
+        Input
     </div>
 </template>
 
 <script>
 	export default {
-		name: "MVessel"
+		name: "Input"
 	}
 </script>
 

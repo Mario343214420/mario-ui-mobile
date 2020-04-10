@@ -6,24 +6,13 @@
       <Header></Header>
       <div class="main" flex>
         <div class="content" flex-box="1">
-          <div v-show="nav === 0">
-            <MButton @click="openToast" type="primary" plain>弹出Toast</MButton>
-            <MButton @click="test" type="success" plain>MButton</MButton>
-            <MButton @click="test" type="info" plain>MButton</MButton>
-            <MButton @click="test" type="warning" plain>MButton</MButton>
-            <MButton @click="test" type="danger" plain>MButton</MButton>
-            <MButton @click="test" type="danger" disable>MButton</MButton>
-            <MButton @click="test" type="danger" size="small" disable>MButton</MButton>
-            <MButton @click="test" type="danger" size="large" disable>MButton</MButton>
-          </div>
+          <router-view></router-view>
           <!--<MSwiper :list="swiperList"></MSwiper>-->
           <MInput></MInput>
         </div>
         <div class="phone">
           <div class="phone-simulate-view">
-            <PhoneSimulate>
-              <MButton @click="openToast" type="primary" plain>弹出Toast</MButton>
-            </PhoneSimulate>
+            <PhoneSimulate></PhoneSimulate>
           </div>
         </div>
       </div>
@@ -58,13 +47,6 @@ export default {
     }
   },
   methods: {
-    test(e){
-      console.log(e);
-    },
-    openToast(){
-      // MToast('提示信息');
-      console.log('openToast')
-    },
     changeView(nav){
       this.nav = nav
     }

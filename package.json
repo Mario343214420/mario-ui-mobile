@@ -8,10 +8,12 @@
     "lib": "vue-cli-service build --target lib --name mariouimobile --dest lib packages/index.js"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
     "core-js": "^3.6.4",
     "swiper": "^5.3.6",
     "vue": "^2.6.11",
-    "vue-awesome-swiper": "^4.0.0-rc.0"
+    "vue-awesome-swiper": "^4.0.0-rc.0",
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -20,8 +22,12 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.0.4",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "terser": "^3.14.1",
+    "vue-loader": "^15.9.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -41,5 +47,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "resolutions": {
+    "terser": "3.14.1"
+  }
 }

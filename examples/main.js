@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import router from './router'
 // 组件库引入
 import MarioUi from '../packages/main'
 
@@ -14,5 +14,6 @@ Vue.use(MarioUi)
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')

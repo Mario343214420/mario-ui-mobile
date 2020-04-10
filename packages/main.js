@@ -5,8 +5,10 @@ import MSwiper from './Swiper'
 import MInput from './Input'
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+import VueRouter from 'vue-router'
 
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
+Vue.use(VueRouter)
 // 组件列表
 const components = [
 	MButton,
