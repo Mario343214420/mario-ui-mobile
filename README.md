@@ -74,14 +74,14 @@ module.exports = {
 Button组件为例，实现一个比较简单的组件，先在packages目录下新建一个Button目录，然后src里存放组件的源代码：
 ```
 <template>
-  <div class="x-button">
+  <div class="m-button">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'x-button',
+  name: 'm-button',
   props: {
     type: String
   }
@@ -98,15 +98,15 @@ export default {
 </style>
 ```
 vue和react组件设计大量应用插槽机制，比如vue里的slot标签， react的children等。 在Button的index.js里编写如下代码来作为vue的组件安装：
-```javascript
+```
 // 导入组件，组件必须声明 name
-import XButton from './src'
+import MButton from './src'
 // 为组件提供 install 安装方法，供按需引入
-XButton.install = function (Vue) {
-  Vue.component(XButton.name, XButton)
+MButton.install = function (Vue) {
+  Vue.component(MButton.name, MButton)
 }
 // 导出组件
-export default XButton
+export default MButton
 ```
 ### Button 结构如下：
 ```
@@ -116,13 +116,13 @@ Button
     main.js
 ```
 packages的入口文件中导入组件并安装导出：
-```javascript
+```
 // 导入button组件
-import XButton from './Button'
+import MButton from './Button'
 
 // 组件列表
 const components = [
-  XButton
+  MButton
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -142,14 +142,14 @@ export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
   install,
   // 以下是具体的组件列表
-  XButton
+  MButton
 }
 ```
 install步骤和导出步骤非常关键，大家需要按照规则配置，这也是vue组件注册的规则之一。详细文档大家可以看vue官网的组件篇。
 
 ### 代码测试
 我们要想看到自己写的组件效果，可以将组件导入到examples目录下的main.js中，其本质就是一个项目的开发目录，我们只需要按照如下方式导入即可：
-```javascript
+```
 // examples/main.js
 import Vue from 'vue'
 import App from './App.vue'
