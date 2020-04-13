@@ -55,6 +55,12 @@ export default {
 </script>
 
 <style lang="stylus">
+@media screen and (min-width:1000px)
+    #app
+        width: 297px
+        height: 644px
+
+
 #app
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

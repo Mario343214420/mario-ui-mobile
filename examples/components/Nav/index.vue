@@ -4,7 +4,7 @@
             <input type="text" placeholder="输入并搜索" />
         </div>
         <div class="nav-list">
-            <div class="nav-item" :class="$router.path === ('/'+ item.toLowerCase())?'active':''" @click="changeView(index)" v-for="(item, index) in navList" :key="index">
+            <div class="nav-item" @click="changeView(index)" v-for="(item, index) in navList" :key="index">
                 <router-link :to="'/' + item.toLowerCase()">{{item}}</router-link>
             </div>
         </div>
